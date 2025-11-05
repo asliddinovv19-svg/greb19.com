@@ -1,141 +1,81 @@
-<<<<<<< HEAD
-/* Google Fonts */
 body {
-  font-family: 'Rubik', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #f0f4f8, #d9e4f5);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
   color: #333;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Header */
+.watermark {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  color: #e0e0e0;
+  font-weight: bold;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
 header {
   text-align: center;
-  padding: 80px 20px;
-  background-color: #ffffffcc;
+  padding: 60px 20px;
+  z-index: 1;
+  position: relative;
 }
 
-h1 {
-  font-size: 2.5em;
+header h1 {
+  font-size: 32px;
+  color: #003366;
   margin-bottom: 10px;
-  color: #2c3e50;
 }
 
 .subtitle {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  color: #34495e;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-/* Button */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
-  background-color: #3498db;
+  padding: 10px 20px;
+  background-color: #0077cc;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #2980b9;
-}
-
-/* About section */
 .about {
-  padding: 40px 20px;
-  background-color: #fff;
   text-align: center;
+  padding: 40px 20px;
+  z-index: 1;
+  position: relative;
 }
 
 .about h2 {
-  font-size: 1.8em;
+  font-size: 24px;
+  color: #003366;
   margin-bottom: 10px;
 }
 
 .about p {
-  font-size: 1em;
+  font-size: 16px;
   max-width: 600px;
   margin: auto;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #ecf0f1;
-  font-size: 0.9em;
-}
-=======
-/* Google Fonts */
-body {
-  font-family: 'Rubik', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #f0f4f8, #d9e4f5);
   color: #333;
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #ffffffcc;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  color: #2c3e50;
-}
-
-.subtitle {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  color: #34495e;
-}
-
-/* Button */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #3498db;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #2980b9;
-}
-
-/* About section */
-.about {
-  padding: 40px 20px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.about h2 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-}
-
-.about p {
-  font-size: 1em;
-  max-width: 600px;
-  margin: auto;
-}
-
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #ecf0f1;
-  font-size: 0.9em;
+  font-size: 14px;
+  color: #666;
+  z-index: 1;
+  position: relative;
 }
->>>>>>> 49844de1a885838918ca1b8ce805332ec497d517
