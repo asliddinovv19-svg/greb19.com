@@ -2,52 +2,114 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <title>Greb19 — yangi avlod ijtimoiy tarmog‘i</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greb19 - Ro‘yxatdan o‘tish</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .login-link {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .login-link a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <div class="watermark">ZUXRA</div>
+  <h1>Ro‘yxatdan o‘tish</h1>
 
-  <header>
-    <h1>Greb19 — yangi avlod ijtimoiy tarmog‘i</h1>
-    <p class="subtitle">Sayt ishga chiqishi yaqinlashmoqda...</p>
-    <a href="register.html" class="btn">Ro‘yxatdan o‘tish</a>
-  </header>
+  <div class="form-container">
+    <form id="signupForm">
+      <label for="username">Ismingiz</label>
+      <input type="text" id="username" name="username" required>
 
-  <section class="about">
-    <h2>Biz haqimizda</h2>
-    <p>
-      Greb19 — bu O‘zbekiston yoshlar uchun maxsus yaratilgan ijtimoiy tarmoq.
-      Maxfiylik, tezlik va zamonaviylik bizning ustuvor yo‘nalishlarimizdir.
-    </p>
-  </section>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
 
-  <footer>
-    <p>© 2025 Greb19. Barcha huquqlar himoyalangan.</p>
-  </footer>
-  <button onclick="showSignupForm()">Ro'yxatdan o'tish</button>
+      <label for="password">Parol</label>
+      <input type="password" id="password" name="password" required>
 
-<div id="signupForm" style="display:none;">
-  <h2>Akkaunt yaratish</h2>
-  <form>
-    <label for="username">Foydalanuvchi nomi:</label><br>
-    <input type="text" id="username" name="username"><br><br>
+      <button type="submit">Yuborish</button>
+    </form>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email"><br><br>
+    <div class="login-link">
+      <p>Allaqachon akkauntingiz bormi? <a href="login.html">Kirish</a></p>
+    </div>
+  </div>
 
-    <label for="password">Parol:</label><br>
-    <input type="password" id="password" name="password"><br><br>
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-    <button type="submit">Yaratish</button>
-  </form>
-</div>
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
 
-<script>
-  function showSignupForm() {
-    document.getElementById("signupForm").style.display = "block";
-  }
-</script>
+      // Hozircha faqat brauzerda ko‘rsatamiz
+      alert("Ro‘yxatdan o‘tildi:\n" + username + "\n" + email);
 
+      // Keyinchalik bu ma’lumotlarni serverga yuborish mumkin
+      // fetch('/api/signup', { method: 'POST', body: JSON.stringify({ username, email, password }) })
+    });
+  </script>
 </body>
 </html>
