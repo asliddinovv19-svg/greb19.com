@@ -25,5 +25,29 @@
   <footer>
     <p>© 2025 Greb19. Barcha huquqlar himoyalangan.</p>
   </footer>
+  <button onclick="showSignupForm()">Ro'yxatdan o'tish</button>
+
+<div id="signupForm" style="display:none;">
+  <h2>Akkaunt yaratish</h2>
+  <form>
+    <label for="username">Foydalanuvchi nomi:</label><br>
+    <input type="text" id="username" name="username"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="password">Parol:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+
+    <button type="submit">Yaratish</button>
+  </form>
+</div>
+
+<script>
+  function showSignupForm() {
+    document.getElementById("signupForm").style.display = "block";
+  }
+</script>
+
 </body>
 </html>
