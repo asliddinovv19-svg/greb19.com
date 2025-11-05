@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Greb19 - Ro‘yxatdan o‘tish</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Ro‘yxatdan o‘tish</h2>
+    <form id="signupForm">
+      <input type="text" id="username" placeholder="Ismingiz" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Parol" required>
+      <button type="submit">Yuborish</button>
+    </form>
+    <div class="switch-link">
+      <p>Akkauntingiz bormi? <a href="index.html">Kirish</a></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      alert("Ro‘yxatdan o‘tildi:\n" + username + "\n" + email);
+    });
+  </script>
+</body>
+</html>

@@ -2,113 +2,28 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Greb19 - Ro‘yxatdan o‘tish</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 30px;
-    }
-
-    .form-container {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #555;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px;
-      width: 100%;
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #005fa3;
-    }
-
-    .login-link {
-      margin-top: 15px;
-      text-align: center;
-    }
-
-    .login-link a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-
-    .login-link a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>Greb19 - Kirish</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Ro‘yxatdan o‘tish</h1>
-
-  <div class="form-container">
-    <form id="signupForm">
-      <label for="username">Ismingiz</label>
-      <input type="text" id="username" name="username" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="password">Parol</label>
-      <input type="password" id="password" name="password" required>
-
-      <button type="submit">Yuborish</button>
+  <div class="container">
+    <h2>Kirish</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Parol" required>
+      <button type="submit">Kirish</button>
     </form>
-
-    <div class="login-link">
-      <p>Allaqachon akkauntingiz bormi? <a href="login.html">Kirish</a></p>
+    <div class="switch-link">
+      <p>Akkauntingiz yo‘qmi? <a href="signup.html">Ro‘yxatdan o‘tish</a></p>
     </div>
   </div>
 
   <script>
-    document.getElementById("signupForm").addEventListener("submit", function(e) {
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
       e.preventDefault();
-
-      const username = document.getElementById("username").value;
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
-
-      // Hozircha faqat brauzerda ko‘rsatamiz
-      alert("Ro‘yxatdan o‘tildi:\n" + username + "\n" + email);
-
-      // Keyinchalik bu ma’lumotlarni serverga yuborish mumkin
-      // fetch('/api/signup', { method: 'POST', body: JSON.stringify({ username, email, password }) })
+      alert("Kirish:\n" + email);
     });
   </script>
 </body>
