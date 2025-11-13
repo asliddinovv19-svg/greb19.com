@@ -2,28 +2,128 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <title>Greb19 - Kirish</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASLIDDINOV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle, #2c1b0c, #000);
+      color: #f9d29d;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      background: rgba(0,0,0,0.4);
+      padding: 40px 60px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .overlay h1 {
+      font-size: 3em;
+      color: gold;
+      text-shadow: 0 0 20px #ffbf00;
+    }
+
+    .overlay p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+
+    .overlay button {
+      padding: 10px 20px;
+      font-size: 1em;
+      color: black;
+      background: gold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .overlay button:hover {
+      background: #ffcc33;
+      transform: scale(1.1);
+    }
+
+    #background3D {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Kirish</h2>
-    <form id="loginForm">
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Parol" required>
-      <button type="submit">Kirish</button>
-    </form>
-    <div class="switch-link">
-      <p>Akkauntingiz yo‘qmi? <a href="signup.html">Ro‘yxatdan o‘tish</a></p>
-    </div>
+
+  <!-- 🎵 Musiqa (qo‘shiq faylini shu papkaga joylashtiring: golden-brown.mp3) -->
+  <audio autoplay loop>
+    <source src="golden-brown.mp3" type="audio/mpeg">
+    Sizning brauzeringiz audio qo‘llab-quvvatlamaydi.
+  </audio>
+
+  <!-- Matnli markaziy blok -->
+  <div class="overlay">
+    <h1>ASLIDDINOV</h1>
+    <p>Hayot san’at, ASLIDDINOV esa uslubi 🎵</p>
+    <button>Profilga kirish</button>
   </div>
 
+  <!-- 3D fon -->
+  <canvas id="background3D"></canvas>
+
+  <!-- Three.js kutubxonasi -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- 3D effekt kodi -->
   <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      alert("Kirish:\n" + email);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background3D'), alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const light = new THREE.PointLight(0xffbf00, 2, 100);
+    light.position.set(10, 10, 10);
+    scene.add(light);
+
+    // 3D geometrik figuralar — qasrlar/mashinalar tasviri sifatida
+    for (let i = 0; i < 40; i++) {
+      const geometry = new THREE.BoxGeometry(Math.random() * 2, Math.random() * 4, Math.random() * 2);
+      const material = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.9, roughness: 0.2 });
+      const cube = new THREE.Mesh(geometry, material);
+      cube.position.set((Math.random() - 0.5) * 50, Math.random() * 15, (Math.random() - 0.5) * 50);
+      cube.rotation.y = Math.random() * Math.PI;
+      scene.add(cube);
+    }
+
+    camera.position.z = 20;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      scene.rotation.y += 0.002;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
   </script>
 </body>
